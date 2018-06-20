@@ -1,0 +1,41 @@
+{
+    "name": "servd/craft-asset-source-generator",
+    "description": "Craft CMS plugin to create asset volumes when first installed",
+    "type": "craft-plugin",
+    "version": "0.1.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craft asset volume generator"
+    ],
+    "support": {
+        "docs": "https://github.com/servdhost/craft-asset-source-generator/blob/master/README.md",
+        "issues": "https://github.com/servdhost/craft-asset-source-generator/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Servd",
+            "homepage": "https://twitter.com/servdhosting"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1",
+        "craftcms/aws-s3": "1.0.8"
+    },
+    "autoload": {
+        "psr-4": {
+          "servd\\craftassetsourcegenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft Asset Source Generator",
+        "handle": "craft-asset-source-generator",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/servdhost/craft-asset-source-generator/master/CHANGELOG.md",
+        "class": "servd\\craftassetsourcegenerator\\CraftAssetSourceGenerator"
+    }
+}
