@@ -24,20 +24,41 @@ To install the plugin, follow these instructions.
 
 ## Craft Asset Source Generator Overview
 
--Insert text here-
+A Craft CMS plugin to create some asset volumes upon installation. Used within Servd's infrastructure.
 
 ## Configuring Craft Asset Source Generator
 
--Insert text here-
+Create a config file at `config/craft-asset-source-generator.php` with something like the following contents:
+
+```
+<?php
+
+return [
+    'sources' => [
+        [
+            'keyId' => 'your-AWS-key',
+            'secret' => 'your-AWS-secret',
+            'bucket' => 's3-bucket',
+            'region' => 's3-region',
+            'subfolder' => 'prepended-to-all-asset-keys',
+            'expires' => '5 minutes',
+            'cfDistributionId' => 'cloudfront-distro-id',
+            'name' => 'volume-name',
+            'handle' => 'volume-handle',
+            'hasUrls' => true,
+            'url' => 'https://url-to-your-volume.com'
+        ]
+    ]
+];
+
+```
+
+You can add multiple volumes, they just need different handles.
 
 ## Using Craft Asset Source Generator
 
--Insert text here-
+Ensure [craftcms/aws-s3](https://github.com/craftcms/aws-s3/) is installed prior to installing this plugin.
 
-## Craft Asset Source Generator Roadmap
+Then install this plugin.
 
-Some things to do, and ideas for potential features:
-
-* Release it
-
-Brought to you by [Matt Gray](https://twitter.com/servdhosting)
+Brought to you by [Servd](https://twitter.com/servdhosting)
